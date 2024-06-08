@@ -10,10 +10,15 @@ export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
   // @Post('create-payment-session')
+  // @MessagePattern('create.payment.session')
+  // // createPaymentSession(@Body() paymentSessionDTO: PaymentSessionDTO){ 
+  //   createPaymentSession(@Payload() paymentSessionDTO: PaymentSessionDTO ) {
+  //   return this.paymentsService.createPaymentSession(paymentSessionDTO);
+  // }
+
   @MessagePattern('create.payment.session')
-  // createPaymentSession(@Body() paymentSessionDTO: PaymentSessionDTO){ 
-    reatePaymentSession(@Payload() paymentSessionDTO: PaymentSessionDTO ) {
-    return this.paymentsService.createPaymentSession(paymentSessionDTO);
+  createPaymentSession(@Payload() paymentSessionDto: PaymentSessionDTO ) {
+    return this.paymentsService.createPaymentSession(paymentSessionDto);
   }
 
   @Get('success')
