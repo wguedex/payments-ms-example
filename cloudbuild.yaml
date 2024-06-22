@@ -3,7 +3,7 @@ steps:
   args: [
     'build', 
     '-t', 
-    'northamerica-northeast1-docker.pkg.dev/tienda-microservices-427201/image-registry/client-gateway', 
+    'northamerica-northeast1-docker.pkg.dev/tienda-microservices-427201/image-registry/payments-ms', 
     '-f', 
     'dockerfile.prod',
     '--platform=linux/amd64',
@@ -11,7 +11,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'push',  
-    'northamerica-northeast1-docker.pkg.dev/tienda-microservices-427201/image-registry/client-gateway' 
+    'northamerica-northeast1-docker.pkg.dev/tienda-microservices-427201/image-registry/payments-ms' 
         ]
 artifacts:
   objects:
